@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 import { UserStorageService } from 'src/app/services/storage/user-storage.service';
 
 
@@ -72,7 +72,32 @@ export class AdminService {
     })
   }
 
+  getPlacedOrders(): Observable<any>{
+    return this._http.get(BASIC_URL+'placedOrder',{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
 
+  changeOrderStatus(orderId: number, status: string): Observable<any> {
+    const url = `${BASIC_URL}order/${orderId}/${status}`;
+    return this._http.get(url, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+  // log(arg0: string): void {
+  //   throw new Error('Method not implemented.');
+  // }
+  // handleError<T>(arg0: string, arg1: undefined[]): any {
+  //   throw new Error('Method not implemented.');
+  // }
+
+
+  postFAQ(productId: number, faqDto: any): Observable<any> {
+    
+    return this._http.post(BASIC_URL + `faq/${productId}`, faqDto , {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
 
 
 }
