@@ -35,8 +35,21 @@ export class AdminService {
     })
   }
 
+  updateProduct(productId: any ,productDto: any): Observable<any>{
+    const url = `http://localhost:6061/api/admin/updateProduct/${productId}`;
+    return this._http.put(url,productDto,{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   getAllProducts(): Observable<any>{
     return this._http.get(BASIC_URL+'getProducts',{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  getAllProductById(prductId : any): Observable<any>{
+    return this._http.get(BASIC_URL+ `product/${prductId}`,{
       headers: this.createAuthorizationHeader(),
     })
   }
@@ -90,14 +103,14 @@ export class AdminService {
   // handleError<T>(arg0: string, arg1: undefined[]): any {
   //   throw new Error('Method not implemented.');
   // }
-
+ 
 
   postFAQ(productId: number, faqDto: any): Observable<any> {
     
     return this._http.post(BASIC_URL + `faq/${productId}`, faqDto , {
       headers: this.createAuthorizationHeader(),
     });
-  }
+  } 
 
 
 }

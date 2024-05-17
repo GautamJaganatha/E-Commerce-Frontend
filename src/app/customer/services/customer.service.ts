@@ -93,5 +93,10 @@ export class CustomerService {
      headers : this.createAuthorizationHeader(),
    })
  }
+ getOrdersProducts(orderId: any): Observable<any>{
+ return this._http.get(BASIC_URL + `ordered-products/${orderId}`,{
+   headers : this.createAuthorizationHeader(),
+ })
+}
 
 }
