@@ -99,4 +99,25 @@ export class CustomerService {
  })
 }
 
+
+getProductDetailsById(productId: any): Observable<any>{
+  return this._http.get(BASIC_URL+ `product/${productId}`,{
+    headers: this.createAuthorizationHeader(),
+  })
+}
+
+giveReview(reviewDto: any): Observable<any>{
+  return this._http.post(BASIC_URL + `review`,reviewDto,{
+    headers : this.createAuthorizationHeader(),
+  })
+ }
+
+
+ addProductToWishlist(WishlistDto: any): Observable<any>{
+  return this._http.post(BASIC_URL + `Wishlist`, WishlistDto,{
+    headers : this.createAuthorizationHeader(),
+  })
+ }
+
+
 }
