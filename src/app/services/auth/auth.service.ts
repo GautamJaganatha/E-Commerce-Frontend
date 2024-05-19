@@ -40,4 +40,10 @@ login(username: string, password: string): any{
   )
 }
 
+
+  getOrderByTrackingId(trackingId: any): Observable<any>{
+    const _Url = "http://localhost:6061/api/customer/";
+    return this._http.get(_Url + `order/${trackingId}`);
+  }
+
 }

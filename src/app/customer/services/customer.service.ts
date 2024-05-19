@@ -119,5 +119,12 @@ giveReview(reviewDto: any): Observable<any>{
   })
  }
 
+ getWishlistByUserId(): Observable<any>{
+  const userId = UserStorageService.getUserId();
+  return this._http.get(BASIC_URL + `Wishlist/${userId}`,{
+    headers : this.createAuthorizationHeader(),
+  })
+ }
+
 
 }

@@ -91,6 +91,12 @@ export class AdminService {
     })
   }
 
+  getAnalytics(): Observable<any>{
+    return this._http.get(BASIC_URL+'order/Analytics',{
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   changeOrderStatus(orderId: number, status: string): Observable<any> {
     const url = `${BASIC_URL}order/${orderId}/${status}`;
     return this._http.get(url, {

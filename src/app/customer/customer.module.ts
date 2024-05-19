@@ -13,6 +13,7 @@ import { MyOrdersComponent } from './components/my-orders/my-orders.component';
 import { ViewOrderedProductsComponent } from './components/view-ordered-products/view-ordered-products.component';
 import { ReviewOrderedProductComponent } from './components/review-ordered-product/review-ordered-product.component';
 import { ViewproductDetailComponent } from './components/viewproduct-detail/viewproduct-detail.component';
+import { ViewWishlistComponent } from './components/view-wishlist/view-wishlist.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ViewproductDetailComponent } from './components/viewproduct-detail/view
     MyOrdersComponent,
     ViewOrderedProductsComponent,
     ReviewOrderedProductComponent,
-    ViewproductDetailComponent
+    ViewproductDetailComponent,
+    ViewWishlistComponent
   ],
   imports: [
     CommonModule,

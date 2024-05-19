@@ -9,6 +9,7 @@ import { CouponsComponent } from './components/coupons/coupons.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { PostProductFAQComponent } from './components/post-product-faq/post-product-faq.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'post-coupons', component: PostCouponComponent},
   {path: 'coupons', component: CouponsComponent},
   {path: 'Orders', component:OrdersComponent},
+  {path:'analytics', component: AnalyticsComponent},
   {path: 'faq/:productId', component: PostProductFAQComponent}
 
 ];
